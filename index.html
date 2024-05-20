@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <title>Contact Form</title>
+</head>
+<body>
+    <main>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contact Us Form</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <div class="success-message">
+                <div class="success-message--header">
+                    <img src="images/icon-success-check.svg" alt="">
+                    <h2>Message Sent!</h2>
+
+                </div>
+                <div class="success-message--body">
+                    <p>Thank you for completing the form. We'll be in touch soon!</p>
+                </div>
+            </div>
+            <main>
+                <form action="post">
+                    <fieldset>
+                        <legend class="form-legend">Contact Us</legend>
+                        <div class="name-flex">
+                            <div class="form-section">
+                                
+                                <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+                                <input type="text" name="first-name" id="first-name" required aria-required="true">
+                                <p class="error" id="first-name-error">This field is required</p>
+                                
+                            </div>
+                
+                            <div class="form-section">
+                                <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+                                <input type="text" name="last-name" id="last-name" required aria-required="true">
+                                <p class="error" id="last-name-error">This field is required</p>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                            <input type="email" name="email" id="email" required aria-required="true">
+                            <p class="error" id="email-error">Please enter a valid email address</p>
+                        </div>
+            
+                        <div class="form-section">
+                            <fieldset>
+                                <legend>Query Type <span aria-hidden="true">*</span></legend>
+                                <div class="radio-flex">
+                                    <div class="radio-wrapper">
+                                        <div class="custom-radio general" tabindex="0"><img src="images/icon-radio-selected.svg" alt="" class="radio-checked"></div>
+                                        <input type="radio" name="query-type" id="query-general" value="general" required aria-required="true" tabindex="-1">
+                                        <label for="query-general">General Enquiry</label>
+                                    </div>
+                                    <div class="radio-wrapper">
+                                        <div class="custom-radio support" tabindex="0"><img src="images/icon-radio-selected.svg" alt="" class="radio-checked"></div>
+                                        <input type="radio" name="query-type" id="query-support" value="support" required aria-required="true" tabindex="-1">
+                                        <label for="query-support">Support Request</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <p class="error" id="query-type-error">Please select a query type</p>
+                        </div>
+            
+                        <div class="form-section">
+                            <label for="message">Message <span aria-hidden="true">*</span></label>
+                            <textarea name="message" id="message" rows="3" required aria-required="true"></textarea>
+                            <p class="error" id="message-error">This field is required</p>
+                        </div>
+            
+                        <div class="form-section agree">
+                            <div class="custom-checkbox" tabindex="0"><img src="images/icon-checkbox-check.svg" alt="" class="checkbox-checked"></div>
+                            <div>
+                            <input type="checkbox" name="consent" id="consent" required aria-required="true" tabindex="-1">
+                            <label for="consent">I consent to being contacted by the team <span aria-hidden="true">*</span></label>
+                            </div>
+                            <p class="error" id="consent-error">To submit this form, please consent to being contacted</p>
+                        </div>
+            
+                        <button type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </main>
+        </body>
+        </html>
+        
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --LightGreen: hsl(148, 38%, 91%);
+    --Green: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 56%);
+    --White: hsl(0, 0%, 100%);
+    --MediumGrey: hsl(186, 15%, 59%);
+    --DarkGrey: hsl(187, 24%, 22%);
+    --light-font: 400;
+    --bold-font: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    font-family: 'Karla';
+    background-color: var(--LightGreen);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 90%;
+    margin-inline: auto;
+}
+
+fieldset {
+    border: none;
+}
+
+form {
+    padding: 1rem;
+    background-color: var(--White);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-block: 2rem;
+    margin-inline: auto;
+}
+
+.form-legend {
+    font-size: 1.5rem;
+    font-weight: var(--bold-font);
+    color: var(--DarkGrey);
+    margin-bottom: 1em;
+}
+
+legend {
+    color: var(--DarkGrey);
+    font-weight: var(--bold-font);
+}
+
+label {
+    display: block;
+    color: var(--DarkGrey);
+    margin-bottom: .75em;
+    font-weight: var(--bold-font);
+
+    
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label span,
+legend span {
+    color: var(--Green);
+}
+
+input, 
+textarea {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid var(--MediumGrey);
+    margin-bottom: 1.5rem;
+    accent-color: var(--Green);
+    flex: 1;
+}
+
+textarea {
+    height: 10rem;
+    resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    outline: none;
+    width: fit-content;
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+label[for="query-general"],
+label[for="query-support"],
+label[for="consent"] {
+    display: inline;
+    margin-bottom: 0;
+    max-width: 15ch;
+}
+
+
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--MediumGrey);
+    border-radius: 8px;
+}
+
+.radio-flex .radio-wrapper:first-child {
+    margin-block: 1rem;
+}
+
+.radio-flex .radio-wrapper:last-child {
+    margin-bottom: 2rem;
+}
+
+.custom-radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--MediumGrey);
+}
+
+.radio-checked {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 18px;
+    border: 1px solid var(--MediumGrey);
+    border-radius: 3px;
+    display: inline-block;
+    height: 18px;
+    font-size: 0;
+    margin-right: 1rem;
+}
+
+.checkbox-checked {
+    display: none;
+}
+
+.agree {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 2rem;
+    
+
+    label {
+        font-size: .8rem;
+    }
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: .75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--Green);
+    color: var(--White);
+    font-weight: var(--bold-font);
+}
+
+.error {
+    position: absolute;
+    bottom: .2rem;
+    left: 0;
+    color: var(--Red);
+    font-size: .7rem;
+    font-weight: var(--bold-font);
+    display: none;
+}
+
+.agree .error {
+    top: 1.5rem;
+}
+
+input:is(:hover, :focus),
+textarea:is(:hover, :focus),
+.custom-checkbox:is(:hover, :focus), 
+.custom-radio:is(:hover, :focus) {
+    cursor: pointer;
+    outline: 2px solid var(--Green);
+}
+
+.active {
+    display: unset;
+}
+
+.form-section {
+    width: 100%;
+    position: relative;
+}
+
+.success-message {
+    padding: 2rem;
+    background-color: var(--DarkGrey);
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-200%);
+    opacity: 0;
+    transition: all .5s ease-in;
+}
+
+.success-message--header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: saturate(3);
+}
+
+
+
+@media screen and (min-width: 800px) {
+    form {
+        padding: 4rem;
+    }
+
+    .name-flex {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .name-flex label {
+        display: flex;
+    }
+
+    .name-flex input {
+        flex: 1 1 0;
+        
+    }
+
+    
+
+    
+
+    .form-legend {
+        font-size: 2.5rem;
+    }
+
+    .radio-flex {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .radio-flex .radio-wrapper:last-child {
+        margin-bottom: 0;
+    }
+
+    .radio-wrapper {
+        width: 100%;
+    }
+
+
+}
